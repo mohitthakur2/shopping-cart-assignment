@@ -1,0 +1,67 @@
+{{#section 'head'}}
+    <title>Sabka Bazaar - Register</title>
+{{/section}}
+
+{{> header}}
+
+<main class="login-page">
+    <div class="login__container">
+
+        {{!-- LEFT --}}
+        <div class="login__left">
+            <h2 class="login__header">Register</h2>
+            <span class="login__description">We do not share your personal details with anyone</span>
+        </div>
+
+        {{!-- RIGHT --}}
+        <div class="login__right">
+            <form class="login__form form" aria-label="Register">
+
+                {{!-- FIRST NAME --}}
+                <div class="form__item">
+                    <div class="floating-input">
+                        <input type="text" required name="firstName" class="floating-input__input" id="input-first-name" placeholder="First Name" aria-placeholder="">
+                        <label class="floating-input__label" for="input-first-name">First Name</label>
+                    </div>
+                </div>
+
+                {{!-- LAST NAME --}}
+                <div class="form__item">
+                    <div class="floating-input">
+                        <input type="text" required name="lastName" class="floating-input__input" id="input-last-name" placeholder="Last Name" aria-placeholder="">
+                        <label class="floating-input__label" for="input-last-name">Last Name</label>
+                    </div>
+                </div>
+
+                {{!-- EMAIL --}}
+                <div class="form__item">
+                    <div class="floating-input">
+                        <input type="email" required name="email" class="floating-input__input" id="input-email" placeholder="Email">
+                        <label class="floating-input__label" for="input-email">Email</label>
+                    </div>
+                </div>
+
+                {{!-- PASSWORD --}}
+                <div class="form__item">
+                    <div class="floating-input">
+                        <input type="password" required name="password" class="floating-input__input" id="input-password" placeholder="Password">
+                        <label class="floating-input__label" for="input-password">Password</label>
+                    </div>
+                </div>
+
+                {{!-- CONFIRM PASSWORD --}}
+                <div class="form__item">
+                    <div class="floating-input">
+                        <input type="password" required name="confirmPassword" class="floating-input__input" id="input-confirm-password" placeholder="Confirm Password">
+                        <label class="floating-input__label" for="input-confirm-password">Confirm Password</label>
+                    </div>
+                </div>
+
+                {{!-- REGISTER BUTTON --}}
+                <div class="form__item">
+                    <button type="submit" class="btn btn--primary btn--full">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

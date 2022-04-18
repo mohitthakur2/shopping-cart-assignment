@@ -1,0 +1,40 @@
+.login {
+    &__container {
+        max-width: 76rem;
+        margin: 0 auto;
+        display: flex;
+        // align-items: center;
+        padding: 5rem 0;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        & > * {
+            flex-basis: 100%;
+            flex: 1 1 100%;
+            & {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+
+        @include respond(sm) {
+            & > * {
+                flex: 1 1 49%;
+            }
+        }
+    }
+
+    &__description {
+        display: block;
+        margin-top: 2rem;
+        font-size: 1.4rem;
+    }
+
+    &__left {
+        // padding-right: 2rem;
+    }
+
+    &__right {
+        
+    }
+}

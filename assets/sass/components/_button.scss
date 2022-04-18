@@ -1,0 +1,33 @@
+.btn {
+    border: none;
+    padding: 1rem;
+    text-align: center;
+    border-radius: .2rem;
+    transition: all .1s linear;
+    font-size: 1.4rem;
+
+    &:focus,
+    &:hover {
+        background-color: darken($color: $color-primary, $amount: 5);
+        cursor: pointer;
+    }
+
+    &:hover {
+        transform: translateY(-.1rem);
+        box-shadow: 0 1.5rem 1.5rem rgba(0,0,0,.15);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 .75rem .75rem rgba(0,0,0,.15);
+    }
+}
+
+.btn--primary {
+    background-color: $color-primary;
+    color: white;
+}
+
+.btn--full {
+    width: 100%;
+}

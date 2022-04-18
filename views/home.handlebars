@@ -1,0 +1,20 @@
+{{#section 'head'}}
+<title>Sabka Bazaar - Home</title>
+{{/section}}
+
+{{> header}}
+<main class="homepage">
+
+    {{#each categories}}
+
+    <div class="category-card">
+        <img class="category-card__img" src="{{imageUrl}}" alt="{{name}}" />
+        <div class="category-card__content">
+            <h3 class="category-card__title">{{name}}</h3>
+            <p class="category-card__description">{{description}}</p>
+            <a href="/products?category={{id}}"><button class="btn btn--primary">Expore {{key}}</button></a>
+        </div>
+    </div>
+    {{/each}}
+</main>
+<script src="js/homepage.js"></script>

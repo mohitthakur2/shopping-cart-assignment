@@ -1,0 +1,44 @@
+{{#section 'head'}}
+    <title>Sabka Bazaar - Login</title>
+{{/section}}
+
+
+{{> header}}
+
+<main class="login-page">
+    <div class="login__container">
+
+        {{!-- LEFT --}}
+        <div class="login__left">
+            <h2 class="login__header">Login</h2>
+            <span class="login__description">Get access to your Orders, Wishlist and Recommendations</span>
+        </div>
+
+        {{!-- RIGHT --}}
+        <div class="login__right">
+            <form class="login__form form">
+
+                {{!-- EMAIL --}}
+                <div class="form__item">
+                    <div class="floating-input">
+                        <input type="email" required class="floating-input__input" id="input-email" placeholder="Email">
+                        <label class="floating-input__label" for="input-email">Email</label>
+                    </div>
+                </div>
+
+                {{!-- PASSWORD --}}
+                <div class="form__item">
+                    <div class="floating-input">
+                        <input type="password" required class="floating-input__input" id="input-password" placeholder="Password">
+                        <label class="floating-input__label" for="input-password">Password</label>
+                    </div>
+                </div>
+
+                {{!-- LOGIN BUTTON --}}
+                <div class="form__item">
+                    <button type="submit" class="btn btn--primary btn--full">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

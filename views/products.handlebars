@@ -1,0 +1,40 @@
+{{#section 'head'}}
+{{#if filterCategoryName}}
+<title>Sabka Bazaar - {{filterCategoryName}}</title>
+{{else}}
+<title>Sabka Bazaar - Products</title>
+{{/if}}
+{{/section}}
+
+{{> header}}
+
+<div class="products-page">
+    <nav class="categories-nav">
+        <ul class="categories-nav__list" aria-label="Categories">
+            {{#each categories}}
+            <li class="categories-nav__item" data-active-link="{{activeCategory}}" data-category-id="{{id}}"
+                data-category-key="{{key}}"><a href="/products?category={{id}}">{{name}}</a></li>
+            {{/each}}
+        </ul>
+    </nav>
+
+    <main>
+        <div class="products-listing">
+            {{#each products}}
+            <div class="product-card">
+                <h3 class="product-card__title">{{name}}</h3>
+                <div class="product-card__body">
+                    <img src="{{imageURL}}" alt="{{name}}" class="product-card__img">
+                    <div class="product-card__content">
+                        <p class="product-card__description">{{description}}</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">MRP Rs.{{price}}</span>
+                            <button class="btn btn--primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </main>
+</div>
