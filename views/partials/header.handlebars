@@ -25,17 +25,57 @@
 
             {{!-- CART --}}
             <div class="cart">
-                <svg version="1.1" id="Layer_1" focusable="false" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24"
-                    style="enable-background:new 0 0 24 24;" xml:space="preserve" class="cart__icon">
-                    <path
-                        d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" />
-                </svg>
+                <button class="cart__btn" id="cart-btn">
+                    <svg version="1.1" id="Layer_1" focusable="false" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24"
+                        style="enable-background:new 0 0 24 24;" xml:space="preserve" class="cart__btn-icon">
+                        <path
+                            d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" />
+                    </svg>
 
-                <span class="cart__items-count">0 items</span>
+                    <span class="cart__btn-items-count" id="cart-items-count">0 items</span>
+                </button>
             </div>
         </div>
 
+        <article id="cart" class="">
+            <div class="cart__overlay" id="cart-overlay"></div>
+            <div class="cart__container" id="cart-container">
 
+                {{!-- CART HEADER --}}
+                <header class="cart__header">
+                    <h2 class="cart__heading">My Cart ( item)</h2>
+                    <button class="cart__close-icon" id="cart-close-icon">&#10006;</button>
+                </header>
+
+                {{!-- CART ITEMS --}}
+                <ul class="cart__items-list" id="cart-list">
+                    {{!-- <li class="cart__item">
+                        <img class="cart__item__img" src="/images/logo.png"></img>
+                        <div class="cart__item__product">
+                            <h4 class="cart__item__title">Apple Washington, Regular, 5 pcs</h4>
+                            <div class="cart__item__quantity-box">
+                                <div class="cart__item__quantity-dec">&#45;</div>
+                                <div class="cart__item__quantity">1</div>
+                                <div class="cart__item__quantity-inc">&#43;</div>
+                                <div class="cart__item__quantity-times">&#10006;</div>
+                                <div class="cart__item__quantity-price">Rs.187</div>
+                            </div>
+                        </div>
+                        <div class="cart__item__total">Rs.187</div>
+                    </li> --}}
+                </ul>
+
+                <footer class="cart__footer">
+                    <p class="cart__promo-msg">Promo code can be applied on payment page</p>
+                    <button class="btn btn--primary btn--full">
+                        <span>Proceed to Checkout</span>
+                        <span>Rs.167 > </span>
+                    </button>
+                </footer>
+            </div>
+        </article>
     </nav>
 </div>
+<script src="/js/header.js"></script>
+<script src="/js/cart.js"></script>

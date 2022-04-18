@@ -9,12 +9,20 @@
     margin: 0 auto;
     align-items: flex-end;
     // padding: 1rem 0;
+    position: relative;
+    height: 6rem;
+
+    @include respond(sm) {
+        height: 9rem;
+    }
 
     &__logo {
         width: 12rem;
+
         @include respond(sm) {
             width: 15rem;
         }
+
         padding-top: .5rem;
     }
 
@@ -57,6 +65,7 @@
         @include respond(sm) {
             justify-content: space-between;
         }
+
         display: flex;
         flex-direction: column;
         height: auto;
@@ -77,7 +86,7 @@
                     color: black;
                     text-decoration: none;
                     margin-right: 1rem;
-                    
+
                     &:hover {
                         color: black;
                         text-decoration: underline;
@@ -89,19 +98,197 @@
 }
 
 .cart {
-    background-color: $color-gray-light-1;
-    display: flex;
-    padding: 1rem;
-    align-items: center;
 
-    &__icon {
+    &__btn {
+        background-color: $color-gray-light-1;
+        display: flex;
+        padding: 1rem;
+        align-items: center;
+        border: none;
+    }
+
+    &__btn-icon {
         width: 2.5rem;
         margin-right: .5rem;
         fill: $color-primary;
     }
 
-    &__items-count {
+    &__btn-items-count {
         font-size: 1.4rem;
         white-space: nowrap;
+    }
+
+    &__overlay {
+        width: 0;
+        height: 0;
+        z-index: -1;
+        display: none;
+        overflow: hidden;
+        position: fixed;
+        background-color: rgba(0, 0, 0, .5);
+        top: 0;
+        left: 0;
+    }
+
+    &--visible &__overlay {
+        display: none;
+
+        @include respond(md) {
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            display: block;
+        }
+    }
+
+    &__container {
+        width: 0;
+        height: 0;
+        z-index: -1;
+        display: none;
+        transition: height .1s linear;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background-color: $color-gray-light-1;
+    }
+
+    &--visible &__container {
+        height: calc(100vh - 6rem);
+        width: 100%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        padding-top: 3rem;
+
+        @include respond(sm) {
+            height: calc(100vh - 9rem);
+        }
+
+        @include respond(md) {
+            width: 50rem;
+            padding-top: 0;
+        }
+    }
+
+    &__header {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        flex: 0 0 auto;
+        margin-bottom: 1rem;
+
+        @include respond(md) {
+            background-color: black;
+            padding: 1rem;
+        }
+    }
+
+    &__heading {
+        color: black;
+
+        @include respond(md) {
+            color: white;
+        }
+    }
+
+    &__close-icon {
+        background-color: transparent;
+        border: none;
+        font-size: 2.5rem;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+            color: darken($color: white, $amount: 25);
+        }
+    }
+
+    &__items-list {
+        flex-shrink: 0;
+        flex-grow: 1;
+        flex-basis: 50%;
+        overflow: auto;
+    }
+
+    &__item {
+        background-color: white;
+        padding: 1rem;
+        display: flex;
+        overflow: auto;
+
+        &:not(:last-of-type) {
+            margin-bottom: 1rem;
+        }
+
+        &__img {
+            height: 5rem;
+            margin-right: 1rem;
+        }
+
+        &__product {
+            flex-grow: 1;
+        }
+
+        &__quantity-box {
+            display: flex;
+            align-items: center;
+            margin-top: .7rem;
+        }
+
+        &__quantity-dec,
+        &__quantity-inc {
+            height: 2rem;
+            width: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $color-primary;
+            color: white;
+            font-size: 2rem;
+            margin-right: 1.5rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken($color: $color-primary, $amount: 5);
+            }
+        }
+
+        &__quantity {
+            margin-right: 1rem;
+        }
+
+        &__quantity-times {
+            margin-left: 1rem;
+            margin-right: 2rem;
+            font-size: 1.2rem;
+        }
+
+        &__total {
+            align-self: flex-end;
+            margin-left: 1rem;
+        }
+    }
+
+    &__footer {
+        background-color: white;
+        padding: 1rem;
+        flex: 0 0 9rem;
+        text-align: center;
+
+        button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+    }
+
+    &__promo-msg {
+        font-size: 1.2rem;
     }
 }

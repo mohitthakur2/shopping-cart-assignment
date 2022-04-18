@@ -3,7 +3,10 @@ console.log(process.env.WATCH);
 
 module.exports = {
     entry: {
-        homepage: '/lib/homepage.js'
+        homepage: '/lib/homepage.js',
+        header: '/lib/header.js',
+        cart: '/lib/cart.js',
+        products: '/lib/products.js'
     },
 
     output: {
