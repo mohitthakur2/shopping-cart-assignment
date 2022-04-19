@@ -134,8 +134,15 @@ body {
 }
 
 .product-card {
-  padding: 0 1rem;
+  padding: 0 1rem 1rem 1rem;
   box-shadow: 1rem 0 1rem rgba(0, 0, 0, 0.025);
+  border-bottom: 2px dashed #eeeeee;
+}
+@media screen and (min-width: 48em) {
+  .product-card {
+    padding: 0 1rem;
+    border-bottom: none;
+  }
 }
 .product-card__title {
   height: 7rem;
@@ -169,11 +176,24 @@ body {
   line-height: 1.3;
 }
 .product-card__footer {
-  padding-bottom: 1rem;
-  border-bottom: 2px dashed #eeeeee;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: none;
+}
+@media screen and (min-width: 48em) {
+  .product-card__footer {
+    padding-bottom: 1rem;
+    border-bottom: 2px dashed #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.product-card__mobile-btn {
+  width: 100%;
+}
+@media screen and (min-width: 48em) {
+  .product-card__mobile-btn {
+    display: none;
+  }
 }
 .product-card__price {
   color: #4d4d4d;
@@ -403,6 +423,10 @@ these make the slideshow work
   padding: 1rem;
   align-items: center;
   border: none;
+  cursor: pointer;
+}
+.cart__btn:hover {
+  background-color: #d1d1d1;
 }
 .cart__btn-icon {
   width: 2.5rem;

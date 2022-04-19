@@ -105,6 +105,11 @@
         padding: 1rem;
         align-items: center;
         border: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-gray-light-2;
+        }
     }
 
     &__btn-icon {
