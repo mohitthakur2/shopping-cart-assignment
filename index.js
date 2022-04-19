@@ -1,7 +1,6 @@
 const  express = require('express');
 const { engine } = require('express-handlebars');
 const path = require('path');
-const apiRouter = require('./routes/api')
 const viewsRouter = require('./routes/index');
 
 const app = express();
@@ -20,8 +19,6 @@ app.set('views', './views');
 
 app.use(viewsRouter)
 
-app.use('/api', apiRouter);
-
-app.use(express.static(path.join(__dirname, 'static')))
+app.use('/static', express.static(path.join(__dirname, 'static')));
 
 app.listen(3000);

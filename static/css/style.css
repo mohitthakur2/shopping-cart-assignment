@@ -589,11 +589,22 @@ these make the slideshow work
 .cart__lowest-price img {
   margin-right: 2rem;
 }
+.cart__items-empty-msg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.cart__items-empty-msg h3 {
+  margin-bottom: 1rem;
+}
 .cart__footer {
   background-color: white;
   padding: 1rem;
   flex: 0 0 9rem;
   text-align: center;
+  box-shadow: -1rem 0 1rem rgba(0, 0, 0, 0.5);
 }
 .cart__footer button {
   display: flex;

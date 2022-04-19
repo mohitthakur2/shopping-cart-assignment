@@ -3,7 +3,7 @@
 
         {{!-- LOGO --}}
         <a href="/" aria-label="Sabka Bazar homepage">
-            <img src="images/logo.png" alt="Sabka bazar logo" class="nav__logo">
+            <img src="/static/images/logo.png" alt="Sabka bazar logo" class="nav__logo">
         </a>
 
         {{!-- PAGE LINKS --}}
@@ -44,7 +44,7 @@
 
                 {{!-- CART HEADER --}}
                 <header class="cart__header">
-                    <h2 class="cart__heading">My Cart ( item)</h2>
+                    <h2 class="cart__heading">My Cart (<span id="cart-item-count">0</span> items)</h2>
                     <button class="cart__close-icon" id="cart-close-icon">&#10006;</button>
                 </header>
 
@@ -53,14 +53,18 @@
                     <ul class="cart__items-list" id="cart-list">
 
                     </ul>
-                    <div class="cart__lowest-price">
-                        <img src="/images/lowest-price.png" alt="">
+                    <div class="cart__lowest-price" id="cart-lowest-price">
+                        <img src="/static/images/lowest-price.png" alt="">
                         <p>You won't find it cheaper anywhere</p>
+                    </div>
+                    <div class="cart__items-empty-msg" id="cart-empty-msg">
+                        <h3>No items in your cart</h3>
+                        <span>Your favourite items are just a click away</span>
                     </div>
                 </div>
 
                 <footer class="cart__footer">
-                    <p class="cart__promo-msg">Promo code can be applied on payment page</p>
+                    <p class="cart__promo-msg" id="cart-promo-code">Promo code can be applied on payment page</p>
                     <button class="btn btn--primary btn--full" id="cart__footer__proceed-btn">
                         <span>Proceed to Checkout</span>
                         <span id="cart-total">Rs.167 > </span>
@@ -74,5 +78,5 @@
         </article>
     </nav>
 </div>
-<script src="/js/header.js"></script>
-<script src="/js/cart.js"></script>
+<script src="/static/js/header.js"></script>
+<script src="/static/js/cart.js"></script>
