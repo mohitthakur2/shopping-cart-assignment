@@ -25,7 +25,7 @@
 
             {{!-- CART --}}
             <div class="cart">
-                <button class="cart__btn" id="cart-btn">
+                <button class="cart__btn" id="cart-btn" aria-label="cart" aria-describedby="cart-items-count">
                     <svg version="1.1" id="Layer_1" focusable="false" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24"
                         style="enable-background:new 0 0 24 24;" xml:space="preserve" class="cart__btn-icon">
@@ -45,7 +45,7 @@
                 {{!-- CART HEADER --}}
                 <header class="cart__header">
                     <h2 class="cart__heading">My Cart (<span id="cart-item-count">0</span> items)</h2>
-                    <button class="cart__close-icon" id="cart-close-icon">&#10006;</button>
+                    <button class="cart__close-icon" id="cart-close-icon" aria-label="Close Cart">&#10006;</button>
                 </header>
 
                 {{!-- CART ITEMS --}}
@@ -78,5 +78,5 @@
         </article>
     </nav>
 </div>
-<script src="/static/js/header.js"></script>
-<script src="/static/js/cart.js"></script>
+<script defer src="/static/js/header.js"></script>
+<script defer src="/static/js/cart.js"></script>

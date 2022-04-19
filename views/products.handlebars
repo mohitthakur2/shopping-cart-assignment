@@ -33,21 +33,21 @@
     <main>
         <div class="products-listing" id="products-listing">
             {{#each products}}
-            <div class="product-card" data-id="{{id}}" data-title="{{name}}" data-imgUrl="{{imageURL}}"
+            <section class="product-card" data-id="{{id}}" data-title="{{name}}" data-imgUrl="{{imageURL}}"
                 data-price="{{price}}">
                 <h3 class="product-card__title">{{name}}</h3>
                 <div class="product-card__body">
-                    <img src="{{imageURL}}" alt="{{name}}" class="product-card__img">
+                    <img src="{{imageURL}}" alt="{{name}}" aria-label="{{name}}" class="product-card__img">
                     <div class="product-card__content">
                         <p class="product-card__description">{{description}}</p>
                         <div class="product-card__footer">
                             <span class="product-card__price">MRP Rs.{{price}}</span>
-                            <button class="btn btn--primary add-to-cart-btn">Buy Now</button>
+                            <button class="btn btn--primary add-to-cart-btn" type="button">Buy Now</button>
                         </div>
-                        <button class="btn btn--primary product-card__mobile-btn add-to-cart-btn">Buy Now @ MRP Rs. {{price}}</button>
+                        <button class="btn btn--primary product-card__mobile-btn add-to-cart-btn" type="button">Buy Now @ MRP Rs. {{price}}</button>
                     </div>
                 </div>
-            </div>
+            </section>
             {{/each}}
         </div>
     </main>
