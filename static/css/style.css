@@ -407,6 +407,7 @@ body {
   font-size: 2rem;
   margin-right: 1.5rem;
   cursor: pointer;
+  border: none;
 }
 .cart__item__quantity-dec:hover, .cart__item__quantity-inc:hover {
   background-color: #b8014c;
@@ -434,6 +435,13 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
+}
+.cart__footer button a {
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  text-decoration: none;
 }
 .cart__promo-msg {
   font-size: 1.2rem;
