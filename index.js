@@ -21,4 +21,6 @@ app.use(viewsRouter)
 
 app.use('/static', express.static(path.join(__dirname, 'static')));
 
-app.listen(3000);
+app.listen(3000, () => {
+    console.log('Server running on Port 3000')
+});

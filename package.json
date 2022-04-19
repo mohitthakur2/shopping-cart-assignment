@@ -5,23 +5,22 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:express": "nodemon ./index.js",
+    "watch:express": "nodemon ./index.js",
     "sass:compile": "sass ./assets/sass/main.scss ./static/css/style.css",
     "sass:watch": "sass ./assets/sass/main.scss ./static/css/style.css -w",
     "js:build": "cross-env NODE_ENV=production webpack",
-    "js:watch": "cross-env NODE_ENV=development  WATCH=true webpack",
-    "dev": "npm-run-all -p start:express sass:watch js:watch",
+    "js:watch": "cross-env NODE_ENV=production WATCH=true webpack",
+    "dev": "npm-run-all -p watch:express sass:watch js:watch",
     "build": "npm-run-all -p sass:compile js:build",
-    "start": "node ./index.js"
+    "start:server": "node ./index.js",
+    "start": "npm-run-all build start:server"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "canned": "^0.3.12",
     "express": "^4.17.3",
-    "express-handlebars": "^6.0.5",
-    "lodash": "^4.17.21",
-    "owl.carousel": "^2.3.4"
+    "express-handlebars": "^6.0.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
