@@ -1,6 +1,3 @@
-console.log(process.env.NODE_ENV);
-console.log(process.env.WATCH);
-
 const webpack = require('webpack');
 
 module.exports = {

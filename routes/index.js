@@ -10,7 +10,6 @@ categoriesResponse.forEach(item => {
 viewsRouter.get('/', (req, res) => {
     try {
         let filteredCategories = categoriesResponse.filter(category => category.enabled).sort((a, b) => a.order - b.order)
-        console.log('sortedCategories ', filteredCategories);
         res.render('home', { banners: bannersResponse, categories: filteredCategories })
     } catch (error) {
         res.render('error')

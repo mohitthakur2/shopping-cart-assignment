@@ -94,6 +94,8 @@
         background-color: $color-gray-light-1;
         color: $color-primary;
         padding: 1rem;
+        height: 1rem;
+        display: block;
     }
     @include respond(sm) {
         display: none;

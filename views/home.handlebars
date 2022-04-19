@@ -1,5 +1,6 @@
 {{#section 'head'}}
 <title>Sabka Bazaar - Home</title>
+<meta name="description" content="Best place online to buy products from various categories, from everyday needs to shopping">
 {{/section}}
 
 {{> header}}
@@ -15,7 +16,7 @@
         <button class="controls" id="next">Next</button>
         <div class="slide-controls" id="slide-controls">
             {{#each banners}}
-                <button class="slide-control"></button>
+                <button class="slide-control" aria-label="{{bannerImageAlt}}"></button>
             {{/each}}
         </div>
     </div>
