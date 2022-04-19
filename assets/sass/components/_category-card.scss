@@ -33,8 +33,8 @@
         margin-bottom: 2rem;
     }
 
-    &:nth-of-type(even) &__img {
-        order: 2;
+    &:nth-of-type(odd) &__img {
+        order: 1;
     }
 
     &:not(:last-of-type) {

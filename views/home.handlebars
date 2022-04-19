@@ -6,7 +6,7 @@
 {{> header}}
 <main class="homepage">
 
-    <div class="banner">
+    <div class="banner shadow-middle">
         <ul id="slides">
             {{#each banners}}
                 <li class="slide"><img src="{{bannerImageUrl}}" alt="{{bannerImageAlt}}"></li>
@@ -22,7 +22,7 @@
     </div>
 
     {{#each categories}}
-    <div class="category-card">
+    <div class="category-card shadow-middle">
         <img class="category-card__img" src="{{imageUrl}}" alt="{{name}}" />
         <div class="category-card__content">
             <h3 class="category-card__title">{{name}}</h3>
