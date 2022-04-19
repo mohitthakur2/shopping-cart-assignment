@@ -18,10 +18,22 @@
         </ul>
     </nav>
 
+    <nav class="categories-mobile-nav">
+        <select name="category-dropdown" id="mobile-category-dropdown" class="categories-mobile-nav__select">
+            <option value="" class="categories-mobile-nav__option">Select Category</option>
+            {{#each categories}}
+                <option class="categories-mobile-nav__option" data-active-link="{{activeCategory}}"
+                    value="{{id}}"><a href="/products?category={{id}}">{{name}}</a>
+                </option>
+            {{/each}}
+        </select>
+    </nav>
+
     <main>
         <div class="products-listing" id="products-listing">
             {{#each products}}
-            <div class="product-card" data-id="{{id}}" data-title="{{name}}" data-imgUrl="{{imageURL}}" data-price="{{price}}">
+            <div class="product-card" data-id="{{id}}" data-title="{{name}}" data-imgUrl="{{imageURL}}"
+                data-price="{{price}}">
                 <h3 class="product-card__title">{{name}}</h3>
                 <div class="product-card__body">
                     <img src="{{imageURL}}" alt="{{name}}" class="product-card__img">
