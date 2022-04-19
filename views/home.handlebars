@@ -1,19 +1,37 @@
 {{#section 'head'}}
 <title>Sabka Bazaar - Home</title>
+<link rel="stylesheet" href="/vendors/owl-carousel.min.css">
 {{/section}}
 
 {{> header}}
 <main class="homepage">
 
-    {{#each categories}}
-        <div class="category-card">
-            <img class="category-card__img" src="{{imageUrl}}" alt="{{name}}" />
-            <div class="category-card__content">
-                <h3 class="category-card__title">{{name}}</h3>
-                <p class="category-card__description">{{description}}</p>
-                <a href="/products?category={{id}}"><button class="btn btn--primary">Expore {{key}}</button></a>
-            </div>
+    <div class="banner">
+        <ul id="slides">
+            {{#each banners}}
+                <li class="slide"><img src="{{bannerImageUrl}}" alt="{{bannerImageAlt}}"></li>
+            {{/each}}
+        </ul>
+        <button class="controls" id="previous">Prev</button>
+        <button class="controls" id="next">Next</button>
+        <div class="slide-controls" id="slide-controls">
+            {{#each banners}}
+                <button class="slide-control"></button>
+            {{/each}}
         </div>
+    </div>
+
+    {{#each categories}}
+    <div class="category-card">
+        <img class="category-card__img" src="{{imageUrl}}" alt="{{name}}" />
+        <div class="category-card__content">
+            <h3 class="category-card__title">{{name}}</h3>
+            <p class="category-card__description">{{description}}</p>
+            <a href="/products?category={{id}}"><button class="btn btn--primary">Expore {{key}}</button></a>
+        </div>
+    </div>
     {{/each}}
 </main>
-<script src="js/homepage.js"></script>
+<script defer src="/vendors/jquery.min.js"></script>
+<script defer src="/vendors/owl-carousel.min.js"></script>
+<script defer src="js/homepage.js"></script>

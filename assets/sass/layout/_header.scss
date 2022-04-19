@@ -136,7 +136,7 @@
         @include respond(md) {
             width: 100vw;
             height: 100vh;
-            z-index: 1;
+            z-index: 25;
             display: block;
         }
     }
@@ -157,7 +157,7 @@
     &--visible &__container {
         height: calc(100vh - 6rem);
         width: 100%;
-        z-index: 2;
+        z-index: 50;
         display: flex;
         flex-direction: column;
         padding-top: 3rem;

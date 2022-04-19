@@ -1,6 +1,8 @@
 console.log(process.env.NODE_ENV);
 console.log(process.env.WATCH);
 
+const webpack = require('webpack');
+
 module.exports = {
     entry: {
         homepage: '/lib/homepage.js',
@@ -28,6 +30,14 @@ module.exports = {
             }
         ]
     },
+
+    plugins: [
+        new webpack.ProvidePlugin({
+          $: 'jquery',
+          jQuery: 'jquery',
+          'window.jQuery': 'jquery'
+        }),
+    ],
 
     watch: process.env.WATCH === 'true',
 
