@@ -331,6 +331,12 @@ these make the slideshow work
   z-index: -2;
 }
 
+.app-footer {
+  padding: 1rem;
+  background-color: #eeeeee;
+  text-align: center;
+}
+
 .nav-container {
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
 }
