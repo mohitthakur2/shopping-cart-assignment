@@ -19,6 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "canned": "^0.3.12",
+    "dompurify": "^2.3.6",
     "express": "^4.17.3",
     "express-handlebars": "^6.0.5"
   },
