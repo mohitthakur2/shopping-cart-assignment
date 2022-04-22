@@ -21,6 +21,18 @@ app.use(viewsRouter)
 
 app.use('/static', express.static(path.join(__dirname, 'static')));
 
+app.post('/add-to-cart', (req, res) => {
+    res.json({success: true})
+})
+
+app.post('/increment-quantity', (req, res) => {
+    res.json({success: true})
+})
+
+app.post('/decrement-quantity', (req, res) => {
+    res.json({success: true})
+})
+
 app.listen(3000, () => {
     console.log('Server running on Port 3000')
 });
