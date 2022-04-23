@@ -2,10 +2,10 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        homepage: '/lib/homepage.js',
-        header: '/lib/header.js',
-        cart: '/lib/cart.js',
-        products: '/lib/products.js'
+        homepage: '/src/js/homepage.js',
+        header: '/src/js/header.js',
+        cart: '/src/js/cart.js',
+        products: '/src/js/products.js'
     },
 
     output: {
