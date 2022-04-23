@@ -10,7 +10,7 @@
 {{> header}}
 
 <div class="products-page">
-    <nav class="categories-nav">
+    <nav class="categories-nav" aria-label="Categories">
         <ul class="categories-nav__list" aria-label="Categories">
             {{#each categories}}
             <li class="categories-nav__item" data-active-link="{{activeCategory}}" data-category-id="{{id}}"
@@ -19,7 +19,7 @@
         </ul>
     </nav>
 
-    <nav class="categories-mobile-nav">
+    <nav class="categories-mobile-nav" aria-label="Categories">
         <select name="category-dropdown" id="mobile-category-dropdown" class="categories-mobile-nav__select">
             <option value="" class="categories-mobile-nav__option">Select Category</option>
             {{#each categories}}
@@ -30,7 +30,7 @@
         </select>
     </nav>
 
-    <main>
+    <main aria-label="Products">
         <div class="products-listing" id="products-listing">
             {{#each products}}
             <section class="product-card" data-id="{{id}}" data-title="{{name}}" data-imgUrl="{{imageURL}}"
