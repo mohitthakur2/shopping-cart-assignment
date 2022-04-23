@@ -36,3 +36,15 @@
     }
 
 }
+
+@mixin container {
+    width: 100%;
+
+    @include respond(xl) {
+        max-width: 90%;
+    }
+
+    @include respond(xxl) {
+        max-width: 85%;
+    }
+}

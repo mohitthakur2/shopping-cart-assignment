@@ -1,6 +1,6 @@
 .homepage {
     padding-top: 2.5rem;
-    max-width: 120rem;
+    @include container;
     padding: 2rem;
     margin: 0 auto;
 

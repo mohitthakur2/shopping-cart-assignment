@@ -10,6 +10,11 @@ html {
   font-size: 62.5%;
   font-family: "Roboto Condensed", sans-serif;
 }
+@media screen and (min-width: 87.5em) {
+  html {
+    font-size: 75%;
+  }
+}
 
 * {
   outline-width: 2px;
@@ -145,7 +150,18 @@ body {
   }
 }
 .product-card__title {
-  height: 7rem;
+  min-height: 7rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media screen and (min-width: 48em) {
+  .product-card__title {
+    -webkit-line-clamp: 4;
+    min-height: 9rem;
+  }
 }
 .product-card__img {
   margin-bottom: 2rem;
@@ -338,12 +354,22 @@ body {
 }
 
 .nav {
-  max-width: 120rem;
+  width: 100%;
   display: flex;
   margin: 0 auto;
   align-items: flex-end;
   position: relative;
   height: 6rem;
+}
+@media screen and (min-width: 75em) {
+  .nav {
+    max-width: 90%;
+  }
+}
+@media screen and (min-width: 87.5em) {
+  .nav {
+    max-width: 85%;
+  }
 }
 @media screen and (min-width: 36em) {
   .nav {
@@ -628,9 +654,19 @@ body {
 
 .homepage {
   padding-top: 2.5rem;
-  max-width: 120rem;
+  width: 100%;
   padding: 2rem;
   margin: 0 auto;
+}
+@media screen and (min-width: 75em) {
+  .homepage {
+    max-width: 90%;
+  }
+}
+@media screen and (min-width: 87.5em) {
+  .homepage {
+    max-width: 85%;
+  }
 }
 @media screen and (min-width: 75em) {
   .homepage {
@@ -641,9 +677,19 @@ body {
 
 .products-page {
   display: flex;
-  max-width: 120rem;
+  width: 100%;
   margin: 0 auto;
   flex-direction: column;
+}
+@media screen and (min-width: 75em) {
+  .products-page {
+    max-width: 90%;
+  }
+}
+@media screen and (min-width: 87.5em) {
+  .products-page {
+    max-width: 85%;
+  }
 }
 @media screen and (min-width: 36em) {
   .products-page {

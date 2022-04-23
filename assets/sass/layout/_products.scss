@@ -1,6 +1,6 @@
 .products-page {
     display: flex;
-    max-width: 120rem;
+    @include container;
     margin: 0 auto;
     flex-direction: column;
 

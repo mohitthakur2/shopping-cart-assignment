@@ -9,12 +9,22 @@
     }
 
     &__title {
-        // margin-bottom: 4rem;
-        height: 7rem;
+        min-height: 7rem;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        @include respond(md) {
+            -webkit-line-clamp: 4;
+            min-height: 9rem;
+            // overflow: hidden;
+        }
     }
 
     &__img {
-        // max-width: 25rem;
         margin-bottom: 2rem;
         height: 17.5rem;
 
@@ -57,6 +67,7 @@
 
     &__mobile-btn {
         width: 100%;
+
         @include respond(md) {
             display: none;
         }

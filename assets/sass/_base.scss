@@ -9,6 +9,15 @@
 html {
     font-size: 62.5%;
     font-family: 'Roboto Condensed', sans-serif;
+
+    @include respond(xl) {
+
+    }
+
+    @include respond(xxl) {
+        // font-size: 80%;
+        font-size: 75%;
+    }
 }
 
 * {
