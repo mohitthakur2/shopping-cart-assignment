@@ -16,7 +16,14 @@ yarn start
 
 ## Lighthouse Screenshots
 
+### Home Page
 ![Home Page](https://github.com/mohitthakur2/shopping-cart-assignment/blob/develop/lighthouse-screenshots/home-page.png?raw=true)
+
+### Products Page
 ![Products Page](https://github.com/mohitthakur2/shopping-cart-assignment/blob/develop/lighthouse-screenshots/products-page.png?raw=true)
+
+### Login Page
 ![Login Page](https://github.com/mohitthakur2/shopping-cart-assignment/blob/develop/lighthouse-screenshots/login-page.png?raw=true)
+
+### Register Page
 ![Register Page](https://github.com/mohitthakur2/shopping-cart-assignment/blob/develop/lighthouse-screenshots/register-page.png?raw=true)
