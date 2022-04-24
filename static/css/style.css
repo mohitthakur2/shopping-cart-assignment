@@ -550,6 +550,46 @@ body {
   font-size: 1.4rem;
 }
 
+.toast-container {
+  position: fixed;
+  top: 2rem;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+.toast-container.leave {
+  animation: leaveToTop 0.2s linear;
+}
+
+.toast {
+  min-width: 20rem;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  min-width: 20rem;
+  animation: moveInTop 0.2s linear;
+}
+.toast--success {
+  background-color: #64f42f;
+  color: black;
+}
+
+@keyframes moveInTop {
+  0% {
+    transform: translateY(-5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes leaveToTop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5rem);
+  }
+}
 .app-footer {
   padding: 1rem;
   background-color: #eeeeee;

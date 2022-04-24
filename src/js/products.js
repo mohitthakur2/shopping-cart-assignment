@@ -12,7 +12,7 @@ Array.from(productListingEl.children).forEach(item => {
     })
     btns.forEach(item => {
         item.addEventListener('click', () => {
-            cartHelpers.addItem(product)
+            cartHelpers.addItem(product, true)
         })
     })
 })

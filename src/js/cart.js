@@ -1,4 +1,5 @@
 import { sanitize } from 'dompurify';
+import Toast from './toast';
 
 export class CartItem {
     constructor({ id, imgUrl, quantity, total, price, title }) {
@@ -227,10 +228,11 @@ export class Cart {
         this.cartView.updateCartFooterButtonText(this.cartService.getItemsCount());
     }
 
-    addItem(item) {
+    addItem(item, showToast = false) {
+        console.log('here', showToast)
         if (this.cartService.isItemAlreadyAdded(item.id)) {
             // this.cartService.incrementQuantity(item.id)
-            this.handleIncrement(item.id);
+            this.handleIncrement(item.id, showToast);
             // this.cartView.updateItem(this.cartService.getItem(item.id));
         } else {
             fetch('/add-to-cart', { method: 'POST', body: JSON.stringify(item) })
@@ -240,8 +242,13 @@ export class Cart {
                         this.cartView.addNewItem(item, this.handleDecrement.bind(this), this.handleIncrement.bind(this))
                         this.cartView.updateCartCount(this.cartService.getItemsCount())
 
+                        if (showToast) {
+                            new Toast({ type: 'success', message: 'Item added to cart successfully' })
+                        }
+
                         this.cartView.updateCartTotal(this.cartService.getCartTotal())
                         this.cartView.updateCartFooterButtonText(this.cartService.getItemsCount());
+                        return Promise.resolve(true)
                     }
                 })
                 .catch(error => {
@@ -272,7 +279,7 @@ export class Cart {
             })
     }
 
-    handleIncrement(id, event) {
+    handleIncrement(id) {
         fetch('/increment-quantity', { method: 'POST', body: JSON.stringify({ id }) })
             .then(response => {
                 if (response.ok) {
@@ -280,6 +287,8 @@ export class Cart {
                     this.cartView.updateItem(this.cartService.getItem(id))
                     this.cartView.updateCartTotal(this.cartService.getCartTotal())
                     this.cartView.updateCartFooterButtonText(this.cartService.getItemsCount());
+
+                    new Toast({ type: 'success', message: 'Item quantity increased successfully' })
                 }
             })
             .catch(error => {
@@ -298,8 +307,8 @@ if (!window.cartController) {
 // cartController.initFromStorage();
 
 export default {
-    addItem(item) {
-        window.cartController.addItem(item)
+    addItem(item, showToast) {
+        return window.cartController.addItem(item, showToast)
     },
 
     initFromStorage() {
