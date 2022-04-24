@@ -5,6 +5,7 @@ class Toast {
         this.message = message || '';
         this.toastEl = null;
         this.renderToast();
+        this.toastId = `toast-${Date.now()}`
     }
 
     getToastHtml() {
@@ -19,21 +20,14 @@ class Toast {
         let toastMessage = document.createElement('div');
         toastMessage.classList.add('toast__mesage');
         toastMessage.textContent = this.message;
+        toastMessage.setAttribute('id', this.toastId)
+        toastMessage.setAttribute('role', 'alert')
+        toastMessage.setAttribute('aria-live', 'polite')
 
         toast.appendChild(toastMessage);
         toastContainer.appendChild(toast);
 
         return toastContainer;
-
-        // return `
-        // <div class="toast-container">
-        //     <div class="toast toast--success">
-        //         <div class="toast__message">
-        //             Item added to cart successfully
-        //         </div>
-        //     </div>
-        // </div>
-        // `
     }
 
     addToastToDOM() {
